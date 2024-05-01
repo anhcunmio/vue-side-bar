@@ -1,27 +1,27 @@
-import { inject as m, unref as he, openBlock as l, createBlock as g, resolveDynamicComponent as S, createElementBlock as h, mergeProps as B, toDisplayString as J, withCtx as ce, createTextVNode as be, onBeforeUnmount as le, resolveComponent as F, normalizeClass as H, normalizeStyle as A, createCommentVNode as f, createElementVNode as T, toHandlerKey as R, Fragment as O, renderList as ne, toRefs as de, ref as y, computed as se, onMounted as ke, provide as d, watch as N, renderSlot as ie, createVNode as ye, Transition as He } from "vue";
-const Oe = {
+import { inject as m, unref as ce, openBlock as l, createBlock as g, resolveDynamicComponent as S, createElementBlock as h, mergeProps as B, toDisplayString as J, withCtx as de, createTextVNode as be, onBeforeUnmount as oe, resolveComponent as F, normalizeClass as H, normalizeStyle as A, createCommentVNode as f, createElementVNode as T, toHandlerKey as R, Fragment as O, renderList as se, toRefs as me, ref as y, computed as le, onMounted as ye, provide as d, watch as N, renderSlot as ne, createVNode as He, Transition as Oe } from "vue";
+const Se = {
   props: ["data"]
-}, Se = Object.assign(Oe, {
+}, Te = Object.assign(Se, {
   __name: "HeaderItem",
   setup(e) {
     const t = m("getSlotByName")("headerItem");
-    return (i, r) => {
-      var s, o, u;
-      return he(t) ? (l(), g(S(he(t)), {
+    return (i, o) => {
+      var s, a, u;
+      return ce(t) ? (l(), g(S(ce(t)), {
         key: 0,
         header: e.data.header
       }, null, 8, ["header"])) : (l(), h("div", B({
         key: 1,
-        class: ["vsss-header", (s = e.data) != null && s.class ? (o = e.data) == null ? void 0 : o.class : ""]
+        class: ["vsss-header", (s = e.data) != null && s.class ? (a = e.data) == null ? void 0 : a.class : ""]
       }, (u = e.data) == null ? void 0 : u.attributes), J(e.data.header), 17));
     };
   }
 }), Q = (e, n) => {
   const t = e.__vccOpts || e;
-  for (const [i, r] of n)
-    t[i] = r;
+  for (const [i, o] of n)
+    t[i] = o;
   return t;
-}, Te = {
+}, we = {
   name: "MenuItemIcon",
   props: {
     icon: {
@@ -29,21 +29,21 @@ const Oe = {
     }
   }
 };
-function we(e, n, t, i, r, s) {
-  var o, u, c, v;
-  return l(), g(S((o = t.icon) != null && o.element ? t.icon.element : "i"), B({
+function Ae(e, n, t, i, o, s) {
+  var a, u, c, v;
+  return l(), g(S((a = t.icon) != null && a.element ? t.icon.element : "i"), B({
     class: ["menu-icon", (u = t.icon) != null && u.class ? (c = t.icon) == null ? void 0 : c.class : ""],
     "aria-hidden": "true"
   }, (v = t.icon) == null ? void 0 : v.attributes), {
-    default: ce(() => [
+    default: de(() => [
       be(J(t.icon.text), 1)
     ]),
     _: 1
   }, 16, ["class"]);
 }
-const Ae = /* @__PURE__ */ Q(Te, [["render", we]]), Re = {
+const Re = /* @__PURE__ */ Q(we, [["render", Ae]]), Be = {
   name: "menu-item",
-  components: { MenuItemIconVue: Ae },
+  components: { MenuItemIconVue: Re },
   data: () => ({
     showChildren: !1,
     expanded: !1,
@@ -81,64 +81,66 @@ const Ae = /* @__PURE__ */ Q(Te, [["render", we]]), Re = {
       animationDuration: n,
       menuType: t,
       widthMiniMenu: i,
-      childrenOpenAnimation: r,
+      childrenOpenAnimation: o,
       removeIconSpace: s,
-      vueRouterEnabel: o,
+      vueRouterEnabel: a,
       keepChildrenOpen: u,
       checkButtonActive: c,
       ChildrenOpenActiveRoute: v,
-      collapsed: a,
-      closeOpenMenuOnHrefPush: b,
-      position: I
-    } = m("sidebarProps"), M = m("browserAgent"), k = m("currentRoute"), L = m("isSameUrl"), P = m("extractChildrenRoutes"), p = m("menuMounted"), X = m("miniMenu"), Z = m("MenuScroll"), $ = m("MenuHover"), W = m("getRandomUid"), D = m("updateCurrantItemHover"), E = m("updateCurranContainerHover"), x = m("CurrantItemHover"), w = m("menuDirection"), U = m("emitOut"), V = m("updateIsCollapsed"), z = m("routerPushBlockList"), _ = m("pushToRouterPush"), j = m("symbolId");
-    let ee = e("itemApendIcon"), q = e("itemPrepandIcon"), te = e("menuItemLabel");
+      collapsed: r,
+      closeOpenMenuOnHrefPush: k,
+      position: I,
+      keepOneMenuOpenAtAtime: M
+    } = m("sidebarProps"), b = m("browserAgent"), L = m("currentRoute"), P = m("isSameUrl"), C = m("extractChildrenRoutes"), X = m("menuMounted"), Z = m("miniMenu"), $ = m("MenuScroll"), ee = m("MenuHover"), W = m("getRandomUid"), E = m("updateCurrantItemHover"), D = m("updateCurranContainerHover"), x = m("CurrantItemHover"), w = m("menuDirection"), U = m("emitOut"), V = m("updateIsCollapsed"), z = m("routerPushBlockList"), _ = m("pushToRouterPush"), j = m("symbolId");
+    let te = e("itemApendIcon"), q = e("itemPrepandIcon"), ie = e("menuItemLabel");
     return {
       animationDuration: n,
       pushToRouterPush: _,
       symbolId: j,
       routerPushBlockList: z,
-      menuItemLabel: te,
+      menuItemLabel: ie,
       updateIsCollapsed: V,
-      currentRoute: k,
-      menuMounted: p,
-      itemApendIcon: ee,
+      currentRoute: L,
+      menuMounted: X,
+      itemApendIcon: te,
       itemPrepandIcon: q,
-      miniMenu: X,
-      MenuScroll: Z,
-      MenuHover: $,
+      miniMenu: Z,
+      MenuScroll: $,
+      MenuHover: ee,
       keepChildrenOpen: u,
       ChildrenOpenActiveRoute: v,
-      closeOpenMenuOnHrefPush: b,
+      closeOpenMenuOnHrefPush: k,
       emitOut: U,
       menuDirection: w,
       checkButtonActive: c,
       CurrantItemHover: x,
-      updateCurranContainerHover: E,
-      updateCurrantItemHover: D,
+      updateCurranContainerHover: D,
+      updateCurrantItemHover: E,
       getRandomUid: W,
-      vueRouterEnabel: o,
-      extractChildrenRoutes: P,
-      isSameUrl: L,
+      vueRouterEnabel: a,
+      extractChildrenRoutes: C,
+      isSameUrl: P,
       menuType: t,
       widthMiniMenu: i,
-      childrenOpenAnimation: r,
+      childrenOpenAnimation: o,
       removeIconSpace: s,
-      collapsed: a,
-      userAgentHeight: M,
-      position: I
+      collapsed: r,
+      userAgentHeight: b,
+      position: I,
+      keepOneMenuOpenAtAtime: M
     };
   },
   watch: {
     routerPushBlockList(e) {
-      if (!(!this.closeOpenMenuOnHrefPush || this.item[this.symbolId] === e) && this.item.children) {
-        let i = function(r) {
+      if (!!(this.keepOneMenuOpenAtAtime || this.closeOpenMenuOnHrefPush) && this.item[this.symbolId] !== e && this.item.children) {
+        let i = function(o) {
           if (!n)
-            for (let s = 0; s < r.length; s++) {
-              if (r[s][t.symbolId] === e) {
+            for (let s = 0; s < o.length; s++) {
+              if (o[s][t.symbolId] === e) {
                 n = !0;
                 break;
               }
-              r[s].children && i(r[s].children);
+              o[s].children && i(o[s].children);
             }
         }, n = !1;
         const t = this;
@@ -197,7 +199,7 @@ const Ae = /* @__PURE__ */ Q(Te, [["render", we]]), Re = {
       }, n = () => {
         window.removeEventListener("scroll", e);
       };
-      window.addEventListener("scroll", e), le(n);
+      window.addEventListener("scroll", e), oe(n);
     }
   },
   computed: {
@@ -276,16 +278,16 @@ const Ae = /* @__PURE__ */ Q(Te, [["render", we]]), Re = {
       return this != null && this.$router ? this.$router.resolve(e).href : e;
     },
     checkActive() {
-      var n, t, i, r;
+      var n, t, i, o;
       if (!!this.checkButtonActive)
         if (((n = this.item) == null ? void 0 : n.href) && this.isSameUrl(this.resloveHref((t = this.item) == null ? void 0 : t.href)))
           this.active = !0, this.miniActive = !1;
         else {
           if (this.active = !1, !((i = this.item) != null && i.children))
             return;
-          let s = !1, o = this.extractChildrenRoutes((r = this.item) == null ? void 0 : r.children, "href") || [];
-          for (var e = 0; e < o.length; e++)
-            if (this.isSameUrl(this.resloveHref(o[e]))) {
+          let s = !1, a = this.extractChildrenRoutes((o = this.item) == null ? void 0 : o.children, "href") || [];
+          for (var e = 0; e < a.length; e++)
+            if (this.isSameUrl(this.resloveHref(a[e]))) {
               if (s = !0, this.miniActive = !0, this.menuMounted || this.miniMenu)
                 break;
               this.ChildrenOpenActiveRoute && this.openItemCildren();
@@ -298,8 +300,12 @@ const Ae = /* @__PURE__ */ Q(Te, [["render", we]]), Re = {
       this.hover ? this.miniLabelClick() : this.toggleMenu();
     },
     clickCompose() {
-      var e, n, t, i;
-      (e = this.item) != null && e.collapseOnClick && this.updateIsCollapsed(!0), this.emitOut("item-click", this.item), this.vueRouterEnabel && ((n = this.item) == null ? void 0 : n.href) && this.$router && (this.pushToRouterPush(this.item[this.symbolId]), (i = this.$router) == null || i.push((t = this.item) == null ? void 0 : t.href));
+      var e, n, t, i, o;
+      if ((e = this.item) != null && e.collapseOnClick && this.updateIsCollapsed(!0), this.emitOut("item-click", this.item), this.vueRouterEnabel && ((n = this.item) == null ? void 0 : n.href) && this.$router || this.keepOneMenuOpenAtAtime) {
+        if (this.pushToRouterPush(this.item[this.symbolId]), !(this.vueRouterEnabel && ((t = this.item) == null ? void 0 : t.href) && this.$router))
+          return;
+        (o = this.$router) == null || o.push((i = this.item) == null ? void 0 : i.href);
+      }
     },
     miniLabelClick() {
       this.clickCompose();
@@ -314,10 +320,10 @@ const Ae = /* @__PURE__ */ Q(Te, [["render", we]]), Re = {
       }), this.showChildren = e;
     },
     checkSiblingsForIcon() {
-      var n, t, i, r;
+      var n, t, i, o;
       if (!(!this.removeIconSpace && this.menuType == "fully") && !!((n = this.item) != null && n.children)) {
         for (var e = 0; e < ((t = this.item) == null ? void 0 : t.children.length); e++)
-          if ((r = (i = this.item) == null ? void 0 : i.children[e]) != null && r.icon) {
+          if ((o = (i = this.item) == null ? void 0 : i.children[e]) != null && o.icon) {
             this.siblingsHaveIcon = !0;
             break;
           }
@@ -364,31 +370,31 @@ const Ae = /* @__PURE__ */ Q(Te, [["render", we]]), Re = {
     setItemOffsetHeight() {
       var e, n, t;
       if (this.depth == 0) {
-        const i = this.$refs.menuItem.getBoundingClientRect(), r = (e = this.$refs.topContainerRef) == null ? void 0 : e.getBoundingClientRect().height;
+        const i = this.$refs.menuItem.getBoundingClientRect(), o = (e = this.$refs.topContainerRef) == null ? void 0 : e.getBoundingClientRect().height;
         let s = 0;
-        (n = this.item) != null && n.children && (s = i.height * ((t = this.item) == null ? void 0 : t.children.length) + i.height), r && s + i.top - 15 > innerHeight ? (this.ContainerOffsetY = innerHeight - i.bottom, this.MakeSpace = !0) : (this.ContainerOffsetY = i.top, this.MakeSpace = !1), this.miniMenuOffset = i.width;
+        (n = this.item) != null && n.children && (s = i.height * ((t = this.item) == null ? void 0 : t.children.length) + i.height), o && s + i.top - 15 > innerHeight ? (this.ContainerOffsetY = innerHeight - i.bottom, this.MakeSpace = !0) : (this.ContainerOffsetY = i.top, this.MakeSpace = !1), this.miniMenuOffset = i.width;
       }
     }
   }
-}, Be = {
-  key: 0,
-  class: "BlockBack"
 }, Le = {
   key: 0,
-  class: "labelName"
-}, Pe = { key: 1 }, De = { key: 1 }, Ee = {
+  class: "BlockBack"
+}, Pe = {
   key: 0,
   class: "labelName"
-}, xe = {
+}, Ee = { key: 1 }, De = { key: 1 }, xe = {
+  key: 0,
+  class: "labelName"
+}, Ye = {
   key: 0,
   class: "labelminiSub"
-}, Ye = {
+}, Ne = {
   key: 2,
   class: "labelminiSub"
 };
-function Ne(e, n, t, i, r, s) {
-  var c, v, a, b, I;
-  const o = F("MenuItemIconVue"), u = F("menu-item", !0);
+function Fe(e, n, t, i, o, s) {
+  var c, v, r, k, I;
+  const a = F("MenuItemIconVue"), u = F("menu-item", !0);
   return l(), h("div", {
     class: H([s.menuItemClass, "menu-item-base alignCenter"]),
     ref: "menuItem",
@@ -396,7 +402,7 @@ function Ne(e, n, t, i, r, s) {
       float: i.miniMenu && t.depth === 1 ? i.menuDirection : s.menuDirectionOposite
     })
   }, [
-    e.active ? (l(), h("div", Be)) : f("", !0),
+    e.active ? (l(), h("div", Le)) : f("", !0),
     T("div", B({ class: "label" }, {
       [R(s.shouldMouseEnterEvent)]: n[0] || (n[0] = (M) => this.hover = !0)
     }, {
@@ -428,7 +434,7 @@ function Ne(e, n, t, i, r, s) {
             active: e.active,
             miniActive: e.miniActive,
             isChildrenMenuOpen: e.showChildren
-          }, null, 8, ["icon", "active", "miniActive", "isChildrenMenuOpen"])) : f("", !0) : (l(), g(o, {
+          }, null, 8, ["icon", "active", "miniActive", "isChildrenMenuOpen"])) : f("", !0) : (l(), g(a, {
             key: 0,
             icon: (c = t.item) == null ? void 0 : c.icon
           }, null, 8, ["icon"]))
@@ -440,7 +446,7 @@ function Ne(e, n, t, i, r, s) {
             active: e.active,
             miniActive: e.miniActive,
             isChildrenMenuOpen: e.showChildren
-          }, null, 8, ["labelName", "active", "miniActive", "isChildrenMenuOpen"])) : (l(), h("span", Le, J(s.labelName), 1))
+          }, null, 8, ["labelName", "active", "miniActive", "isChildrenMenuOpen"])) : (l(), h("span", Pe, J(s.labelName), 1))
         ], 64)) : f("", !0)
       ], 2),
       i.miniMenu && t.depth != 0 || !i.miniMenu ? (l(), h(O, { key: 0 }, [
@@ -448,10 +454,10 @@ function Ne(e, n, t, i, r, s) {
           key: 0,
           class: H(["icons postIconOpenAnima", { opened: e.showChildren }])
         }, null, 2)) : f("", !0),
-        t.item.children && i.itemApendIcon ? (l(), h("div", Pe, [
+        t.item.children && i.itemApendIcon ? (l(), h("div", Ee, [
           i.itemApendIcon ? (l(), g(S(i.itemApendIcon), {
             key: 0,
-            icon: (a = t.item) == null ? void 0 : a.icon,
+            icon: (r = t.item) == null ? void 0 : r.icon,
             isChildrenMenuOpen: e.showChildren,
             active: e.active,
             miniActive: e.miniActive
@@ -466,10 +472,10 @@ function Ne(e, n, t, i, r, s) {
         style: A({ maxHeight: s.heifOfContainer, transition: s.transitionTime }),
         ref: "container"
       }, [
-        e.renderChildren ? (l(!0), h(O, { key: 0 }, ne(t.item.children, (M, k) => (l(), g(u, {
+        e.renderChildren ? (l(!0), h(O, { key: 0 }, se(t.item.children, (M, b) => (l(), g(u, {
           siblingsHaveIconProp: e.siblingsHaveIcon,
           isParentFlat: t.siblingsHaveIconProp,
-          key: k,
+          key: b,
           item: M,
           depth: t.depth + 1,
           smallMenu: t.smallMenu
@@ -519,10 +525,10 @@ function Ne(e, n, t, i, r, s) {
             active: e.active,
             miniActive: e.miniActive,
             isChildrenMenuOpen: e.showChildren
-          }, null, 8, ["labelName", "active", "miniActive", "isChildrenMenuOpen"])) : (l(), h("span", Ee, J((b = t.item) == null ? void 0 : b.name), 1))
+          }, null, 8, ["labelName", "active", "miniActive", "isChildrenMenuOpen"])) : (l(), h("span", xe, J((k = t.item) == null ? void 0 : k.name), 1))
         ], 6)) : f("", !0)
       ], 38),
-      t.depth == 0 && !e.MakeSpace ? (l(), h("div", xe)) : f("", !0),
+      t.depth == 0 && !e.MakeSpace ? (l(), h("div", Ye)) : f("", !0),
       t.item.children ? (l(), h("div", {
         key: 1,
         class: H(["items-container", { "small-menu": t.smallMenu }]),
@@ -532,10 +538,10 @@ function Ne(e, n, t, i, r, s) {
         }),
         ref: "container"
       }, [
-        e.renderChildren ? (l(!0), h(O, { key: 0 }, ne(t.item.children, (M, k) => (l(), g(u, {
+        e.renderChildren ? (l(!0), h(O, { key: 0 }, se(t.item.children, (M, b) => (l(), g(u, {
           siblingsHaveIconProp: e.siblingsHaveIcon,
           isParentFlat: t.siblingsHaveIconProp,
-          key: k,
+          key: b,
           item: M,
           depth: t.depth + 1,
           smallMenu: t.smallMenu,
@@ -543,11 +549,11 @@ function Ne(e, n, t, i, r, s) {
           isMakeSpace: e.MakeSpace
         }, null, 8, ["siblingsHaveIconProp", "isParentFlat", "item", "depth", "smallMenu", "setMaxHeightTopCProp", "isMakeSpace"]))), 128)) : f("", !0)
       ], 6)) : f("", !0),
-      t.depth == 0 && e.MakeSpace ? (l(), h("div", Ye)) : f("", !0)
+      t.depth == 0 && e.MakeSpace ? (l(), h("div", Ne)) : f("", !0)
     ], 6)) : f("", !0)
   ], 6);
 }
-const Fe = /* @__PURE__ */ Q(Re, [["render", Ne]]), We = {
+const We = /* @__PURE__ */ Q(Be, [["render", Fe]]), Ue = {
   name: "MenuHl",
   props: {
     data: {
@@ -555,119 +561,121 @@ const Fe = /* @__PURE__ */ Q(Re, [["render", Ne]]), We = {
     }
   }
 };
-function Ue(e, n, t, i, r, s) {
-  var o, u, c, v;
-  return l(), g(S((o = t.data) != null && o.element ? t.data.element : "hr"), B({
+function Ve(e, n, t, i, o, s) {
+  var a, u, c, v;
+  return l(), g(S((a = t.data) != null && a.element ? t.data.element : "hr"), B({
     class: ["vas-hr", (u = t.data) != null && u.class ? (c = t.data) == null ? void 0 : c.class : ""]
   }, (v = t.data) == null ? void 0 : v.attributes), null, 16, ["class"]);
 }
-const Ve = /* @__PURE__ */ Q(We, [["render", Ue]]), ze = (e, n) => {
+const ze = /* @__PURE__ */ Q(Ue, [["render", Ve]]), _e = (e, n) => {
   const {
     menu: t,
     menuType: i,
-    miniMenu: r,
+    miniMenu: o,
     collapsed: s,
-    animationDuration: o,
+    animationDuration: a,
     width: u,
     widthMiniMenu: c,
     removeIconSpace: v,
-    closeOnClickOutSide: a,
-    overLayerOnOpen: b,
+    closeOnClickOutSide: r,
+    overLayerOnOpen: k,
     childrenOpenAnimation: I,
     position: M,
-    collapseBreakPoint: k,
+    collapseBreakPoint: b,
     dark: L,
     vueRouterEnabel: P,
-    keepChildrenOpen: p,
+    keepChildrenOpen: C,
     checkButtonActive: X,
     ChildrenOpenActiveRoute: Z,
     closeOpenMenuOnHrefPush: $,
+    keepOneMenuOpenAtAtime: ee,
     rtl: W
-  } = de(e), D = y(s.value), E = y(!1), x = y(!1), w = y(r.value), U = y(!1), V = y(null), z = y(null), _ = y(""), j = Symbol("id");
-  let ee = 3;
-  const q = () => ee++;
-  function te(C) {
-    let K = [...C];
-    function ue(G) {
+  } = me(e), E = y(s.value), D = y(!1), x = y(!1), w = y(o.value), U = y(!1), V = y(null), z = y(null), _ = y(""), j = Symbol("id");
+  let te = 3;
+  const q = () => te++;
+  function ie(p) {
+    let K = [...p];
+    function he(G) {
       for (let Y = 0; Y < G.length; Y++)
-        G[Y][j] = q(), G[Y].children && ue(G[Y].children);
+        G[Y][j] = q(), G[Y].children && he(G[Y].children);
     }
-    return ue(K), K;
+    return he(K), K;
   }
-  function me(C) {
-    _.value = C;
+  function fe(p) {
+    _.value = p;
   }
-  const oe = (C) => n.slots.hasOwnProperty(C) ? n.slots[C] : null, ae = (C) => {
-    D.value = C;
-  }, fe = () => {
+  const ae = (p) => n.slots.hasOwnProperty(p) ? n.slots[p] : null, re = (p) => {
+    E.value = p;
+  }, ve = () => {
     x.value = !x.value;
-  }, ve = (C) => {
-    U.value = C;
-  }, Me = (C) => {
-    V.value = C;
-  }, Ce = (C) => {
-    z.value = C;
-  }, re = se(() => W.value ? "right" : "left"), pe = (C, K) => {
-    n.emit(C, K);
-  }, ge = (C) => {
-    w.value = C;
+  }, Me = (p) => {
+    U.value = p;
+  }, pe = (p) => {
+    V.value = p;
+  }, Ce = (p) => {
+    z.value = p;
+  }, ue = le(() => W.value ? "right" : "left"), ge = (p, K) => {
+    n.emit(p, K);
+  }, Ie = (p) => {
+    w.value = p;
   };
-  let Ie = navigator.userAgent.indexOf("Firefox") != -1 ? "-moz-max-content" : "fit-content";
-  return ke(() => {
-    E.value = !0;
+  let ke = navigator.userAgent.indexOf("Firefox") != -1 ? "-moz-max-content" : "fit-content";
+  return ye(() => {
+    D.value = !0;
   }), d("sidebarProps", {
     menu: t,
     menuType: i,
-    collapsed: D,
+    collapsed: E,
     miniMenu: w,
-    animationDuration: o,
+    animationDuration: a,
     width: u,
     widthMiniMenu: c,
     removeIconSpace: v,
-    closeOnClickOutSide: a,
-    overLayerOnOpen: b,
+    closeOnClickOutSide: r,
+    overLayerOnOpen: k,
     childrenOpenAnimation: I,
     position: M,
-    collapseBreakPoint: k,
+    collapseBreakPoint: b,
     vueRouterEnabel: P,
     checkButtonActive: X,
     ChildrenOpenActiveRoute: Z,
     closeOpenMenuOnHrefPush: $,
-    keepChildrenOpen: p,
+    keepChildrenOpen: C,
     dark: L,
-    rtl: W
-  }), d("getSlotByName", oe), d("routerPushBlockList", _), d("pushToRouterPush", me), d("symbolId", j), d("browserAgent", Ie), d("menuMounted", E), d("miniMenu", w), d("MenuScroll", x), d("MenuHover", U), d("getRandomUid", q), d("updateCurrantItemHover", Me), d("updateCurranContainerHover", Ce), d("CurrantItemHover", V), d("CurranContainerHover", z), d("menuDirection", re), d("updateIsCollapsed", ae), d("emitOut", pe), {
-    getIsCollapsed: D,
+    rtl: W,
+    keepOneMenuOpenAtAtime: ee
+  }), d("getSlotByName", ae), d("routerPushBlockList", _), d("pushToRouterPush", fe), d("symbolId", j), d("browserAgent", ke), d("menuMounted", D), d("miniMenu", w), d("MenuScroll", x), d("MenuHover", U), d("getRandomUid", q), d("updateCurrantItemHover", pe), d("updateCurranContainerHover", Ce), d("CurrantItemHover", V), d("CurranContainerHover", z), d("menuDirection", ue), d("updateIsCollapsed", re), d("emitOut", ge), {
+    getIsCollapsed: E,
     getIsminiMenu: w,
-    updateIsCollapsed: ae,
-    getSlotByName: oe,
-    updateminiMenu: ge,
-    menuMounted: E,
-    updateMenuScroll: fe,
-    updateMenuHover: ve,
-    menuDirection: re,
-    addIdToMenuItems: te
+    updateIsCollapsed: re,
+    getSlotByName: ae,
+    updateminiMenu: Ie,
+    menuMounted: D,
+    updateMenuScroll: ve,
+    updateMenuHover: Me,
+    menuDirection: ue,
+    addIdToMenuItems: ie
   };
 };
-function _e(e, n, t) {
+function je(e, n, t) {
   if (!e)
     return;
-  const i = (o) => {
+  const i = (a) => {
     if (t.value) {
-      r();
+      o();
       return;
     }
-    o.target == e.value || o.composedPath().includes(e.value) || n();
-  }, r = () => {
+    a.target == e.value || a.composedPath().includes(e.value) || n();
+  }, o = () => {
     window.removeEventListener("click", i);
   }, s = () => {
-    r(), setTimeout(() => {
+    o(), setTimeout(() => {
       window.addEventListener("click", i);
     }, 0);
   };
-  return le(r), { removeSideBarListner: r, addSideBarListner: s };
+  return oe(o), { removeSideBarListner: o, addSideBarListner: s };
 }
-function je(e, n) {
+function qe(e, n) {
   if (!e)
     return;
   n(e > innerWidth);
@@ -675,34 +683,34 @@ function je(e, n) {
   const i = () => {
     t != window.innerWidth && (n(e > innerWidth), t = window.innerWidth);
   };
-  window.addEventListener("resize", i), le(() => {
+  window.addEventListener("resize", i), oe(() => {
     window.removeEventListener("resize", i);
   });
 }
-const qe = (e, n) => {
-  de(e);
+const Ke = (e, n) => {
+  me(e);
   const t = y(window.location);
-  function i(o, u = t.value) {
-    return u.href === u.origin + o || u.pathname + u.hash === o || u.pathname + u.search === o || u.href === o || u.hash === o;
+  function i(a, u = t.value) {
+    return u.href === u.origin + a || u.pathname + u.hash === a || u.pathname + u.search === a || u.href === a || u.hash === a;
   }
-  function r(o, u) {
-    if (!!o)
-      return Object.entries(o).reduce(
-        (c, [v, a]) => v === u ? c.concat(a) : typeof a == "object" ? c.concat(r(a, u)) : c,
+  function o(a, u) {
+    if (!!a)
+      return Object.entries(a).reduce(
+        (c, [v, r]) => v === u ? c.concat(r) : typeof r == "object" ? c.concat(o(r, u)) : c,
         []
       );
   }
-  const s = (o) => {
-    t.value = { ...o };
+  const s = (a) => {
+    t.value = { ...a };
   };
-  return d("currentRoute", t), d("updateCurrentRoute", s), d("isSameUrl", i), d("extractChildrenRoutes", r), {
+  return d("currentRoute", t), d("updateCurrentRoute", s), d("isSameUrl", i), d("extractChildrenRoutes", o), {
     isSameUrl: i,
-    extractChildrenRoutes: r,
+    extractChildrenRoutes: o,
     currentRoute: t,
     updateCurrentRoute: s
   };
 };
-const Ke = {
+const Ge = {
   name: "vas-menu",
   props: {
     menu: {
@@ -791,6 +799,10 @@ const Ke = {
     closeOpenMenuOnHrefPush: {
       type: Boolean,
       default: !1
+    },
+    keepOneMenuOpenAtAtime: {
+      type: Boolean,
+      default: !1
     }
   },
   emits: {
@@ -809,9 +821,9 @@ const Ke = {
     siblingsHaveIcon: !1
   }),
   components: {
-    MenuItem: Fe,
-    HeaderItem: Se,
-    Menuline: Ve
+    MenuItem: We,
+    HeaderItem: Te,
+    Menuline: ze
   },
   mounted() {
     this.checkSiblingsForIcon(), window.addEventListener(
@@ -873,71 +885,71 @@ const Ke = {
     const {
       getIsCollapsed: t,
       getIsminiMenu: i,
-      updateMenuScroll: r,
+      updateMenuScroll: o,
       updateMenuHover: s,
-      updateminiMenu: o,
+      updateminiMenu: a,
       menuDirection: u,
       updateIsCollapsed: c,
       addIdToMenuItems: v
-    } = ze(e, n), { updateCurrentRoute: a } = qe(e), b = y(null), I = y(e.overLayerOnOpen), { removeSideBarListner: M, addSideBarListner: k } = _e(
-      b,
+    } = _e(e, n), { updateCurrentRoute: r } = Ke(e), k = y(null), I = y(e.overLayerOnOpen), { removeSideBarListner: M, addSideBarListner: b } = je(
+      k,
       () => {
         c(!t.value);
       },
       t
     );
-    e.closeOnClickOutSide && k(), N(
+    e.closeOnClickOutSide && b(), N(
       () => t.value,
-      (p) => {
-        n.emit("update:collapsed", p), e.overLayerOnOpen && (I.value = !p), e.closeOnClickOutSide && (p ? M() : k());
+      (C) => {
+        n.emit("update:collapsed", C), e.overLayerOnOpen && (I.value = !C), e.closeOnClickOutSide && (C ? M() : b());
       }
     ), N(
       () => e.collapsed,
-      (p) => {
-        c(p);
+      (C) => {
+        c(C);
       }
     ), N(
       () => e.closeOnClickOutSide,
-      (p) => {
-        p ? k() : M();
+      (C) => {
+        C ? b() : M();
       }
     ), N(
       () => e.miniMenu,
-      (p) => {
-        o(p);
+      (C) => {
+        a(C);
       }
     ), N(
       () => e.overLayerOnOpen,
-      (p) => {
-        p ? I.value = !t.value : I.value = !1;
+      (C) => {
+        C ? I.value = !t.value : I.value = !1;
       }
     );
-    const L = se(() => i.value ? e.widthMiniMenu : e.width), P = se(() => [
+    const L = le(() => i.value ? e.widthMiniMenu : e.width), P = le(() => [
       `${e.dark ? "dark" : "white"}-theme`,
       e.rtl ? "rtl" : "ltr"
     ]);
-    return je(e.autoCollapse, c), e.overLayerOnOpen && (I.value = !t.value), {
+    return qe(e.autoCollapse, c), e.overLayerOnOpen && (I.value = !t.value), {
       sidebarMenuWidth: L,
-      updateMenuScroll: r,
+      updateMenuScroll: o,
       sidebarClass: P,
-      sidebarmen: b,
-      updateCurrentRoute: a,
+      sidebarmen: k,
+      updateCurrentRoute: r,
       updateMenuHover: s,
       overLayer: I,
       isCollapsed: t,
-      updateminiMenu: o,
+      updateminiMenu: a,
       miniMenuRef: i,
       menuDirection: u,
       addIdToMenuItems: v
     };
   }
-}, Ge = { class: "vas-footer" }, Je = /* @__PURE__ */ T("div", { class: "footer-wrapper" }, null, -1), Qe = {
+}, Je = { class: "vas-footer" }, Qe = /* @__PURE__ */ T("div", { class: "footer-wrapper" }, null, -1), Xe = {
   key: 0,
   class: "vas-over-layer"
 };
-function Xe(e, n, t, i, r, s) {
+function Ze(e, n, t, i, o, s) {
   var v;
-  const o = F("MenuItem"), u = F("HeaderItem"), c = F("Menuline");
+  const a = F("MenuItem"), u = F("HeaderItem"), c = F("Menuline");
   return l(), h(O, null, [
     T("nav", B({
       class: ["vas-menu", i.sidebarClass],
@@ -950,12 +962,12 @@ function Xe(e, n, t, i, r, s) {
         paddingTop: t.paddingTop
       }, { overflow: "hidden" }]
     }, {
-      [R(s.mouseEnterEvent)]: n[2] || (n[2] = (...a) => s.onEnter && s.onEnter(...a))
+      [R(s.mouseEnterEvent)]: n[2] || (n[2] = (...r) => s.onEnter && s.onEnter(...r))
     }, {
-      [R(s.mouseLeaveEvent)]: n[3] || (n[3] = (...a) => s.onLeave && s.onLeave(...a))
+      [R(s.mouseLeaveEvent)]: n[3] || (n[3] = (...r) => s.onLeave && s.onLeave(...r))
     }), [
       T("div", B({
-        [R(s.menuScrollEvent)]: n[0] || (n[0] = (...a) => s.onMenuScroll && s.onMenuScroll(...a))
+        [R(s.menuScrollEvent)]: n[0] || (n[0] = (...r) => s.onMenuScroll && s.onMenuScroll(...r))
       }, {
         class: ["menu-wraper", {
           miniCoolapseMenu: i.miniMenuRef,
@@ -965,33 +977,33 @@ function Xe(e, n, t, i, r, s) {
           width: i.sidebarMenuWidth
         }
       }), [
-        ie(e.$slots, "header"),
-        (l(!0), h(O, null, ne(s.computedMenuList, (a, b) => (l(), h(O, { key: b }, [
-          !(a != null && a.header) && !(a != null && a.LineShow) ? (l(), g(o, {
+        ne(e.$slots, "header"),
+        (l(!0), h(O, null, se(s.computedMenuList, (r, k) => (l(), h(O, { key: k }, [
+          !(r != null && r.header) && !(r != null && r.LineShow) ? (l(), g(a, {
             key: 0,
-            item: a,
+            item: r,
             depth: 0,
             smallMenu: e.smallMenu,
             siblingsHaveIconProp: e.siblingsHaveIcon
-          }, null, 8, ["item", "smallMenu", "siblingsHaveIconProp"])) : (a == null ? void 0 : a.header) && !i.miniMenuRef ? (l(), g(u, {
+          }, null, 8, ["item", "smallMenu", "siblingsHaveIconProp"])) : (r == null ? void 0 : r.header) && !i.miniMenuRef ? (l(), g(u, {
             key: 1,
-            data: a
-          }, null, 8, ["data"])) : a != null && a.LineShow ? (l(), g(c, {
+            data: r
+          }, null, 8, ["data"])) : r != null && r.LineShow ? (l(), g(c, {
             key: 2,
-            data: a
+            data: r
           }, null, 8, ["data"])) : f("", !0)
         ], 64))), 128)),
-        T("div", Ge, [
-          Je,
-          ie(e.$slots, "footer")
+        T("div", Je, [
+          Qe,
+          ne(e.$slots, "footer")
         ])
       ], 16),
       t.BottomMiniMenuBtn ? (l(), h("div", {
         key: 0,
         class: "bottomBtn",
-        onClick: n[1] || (n[1] = (...a) => s.toggleMiniCollapse && s.toggleMiniCollapse(...a))
+        onClick: n[1] || (n[1] = (...r) => s.toggleMiniCollapse && s.toggleMiniCollapse(...r))
       }, [
-        (v = e.$slots) != null && v.BottomMiniMenuBtn ? ie(e.$slots, "BottomMiniMenuBtn", {
+        (v = e.$slots) != null && v.BottomMiniMenuBtn ? ne(e.$slots, "BottomMiniMenuBtn", {
           key: 1,
           miniMenu: i.miniMenuRef
         }) : (l(), h("div", {
@@ -1000,21 +1012,21 @@ function Xe(e, n, t, i, r, s) {
         }, null, 2))
       ])) : f("", !0)
     ], 16),
-    ye(He, { name: "vas-fade" }, {
-      default: ce(() => [
-        i.overLayer ? (l(), h("div", Qe)) : f("", !0)
+    He(Oe, { name: "vas-fade" }, {
+      default: de(() => [
+        i.overLayer ? (l(), h("div", Xe)) : f("", !0)
       ]),
       _: 1
     })
   ], 64);
 }
-const Ze = /* @__PURE__ */ Q(Ke, [["render", Xe]]), et = {
+const $e = /* @__PURE__ */ Q(Ge, [["render", Ze]]), tt = {
   install: (e) => {
-    e.component("VueAwesomeSideBar", Ze);
+    e.component("VueAwesomeSideBar", $e);
   }
 };
 export {
-  Ze as VueAwesomeSideBar,
-  et as default
+  $e as VueAwesomeSideBar,
+  tt as default
 };
 //# sourceMappingURL=vue-awesome-sidebar.js.map
