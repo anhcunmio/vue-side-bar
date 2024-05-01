@@ -1,6 +1,6 @@
 {
   "name": "vue-awesome-sidebar-next",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "private": false,
   "main": "dist/vue-awesome-sidebar.cjs",
   "module": "dist/vue-awesome-sidebar.js",
@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/anhcunmio/vue-side-bar.git"
+    "url": "git+https://github.com/anhcunmio/vue-side-bar.git"
   },
   "homepage": "https://amirkian007.github.io/vasmenu",
   "scripts": {
